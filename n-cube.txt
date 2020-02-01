@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    freopen("D:\Input.txt", "r", stdin);
+    freopen("D:\Output.txt", "w", stdout);
+
+    vector <int> ara;
+    //int ara[50000];
+    int index = 0, temp;
+
+    while(scanf("%d", &temp) == 1){
+        //ara[index++] = temp;
+        ara.push_back(temp);
+        index++;
+    }
+
+    clock_t start = clock();
+    for(int i = 0; i < index; i++){
+        for(int j = 0; j < index; j++){
+            for(int k = 0; k < index; k++){
+                if(ara[i] + ara[j] + ara[k] == 0)
+                cout << ara[i] << " " << ara[j] << " " << ara[k]
+                        << " Sum = " << ara[i] + ara[j] + ara[k] << endl;
+
+            }
+        }
+    }
+    clock_t stop = clock();
+
+    double duration = (double)(stop - start);
+    duration /= CLOCKS_PER_SEC;
+
+    printf( "Total time taken : %.4lf seconds.\n", duration);
+}
+
